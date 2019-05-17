@@ -78,7 +78,7 @@ import RouteSon from '@/pages/RouteSon'
 import RouteSon1 from '@/pages/RouteSon1'
 import RouteSon2 from '@/pages/RouteSon2'
 
-
+import LeigeRouter from '@/pages/leigeRoom/router' // 磊哥空间
 
 
 
@@ -88,6 +88,7 @@ export default new Router({
   //默认为hash模式 #   
   //mode: 'history',  改为history模式  /形式展现   但是会有问题 比如index.html什么的 需要跟后端做配置，所以就用默认hash模式就好
   routes: [
+    ...LeigeRouter,
     {
       path: '/',
       name: 'HelloWorld',

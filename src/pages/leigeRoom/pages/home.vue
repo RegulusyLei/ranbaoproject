@@ -1,5 +1,5 @@
 <template>
   <div>
-    磊哥空间
+    <router-view></router-view>
   </div>
 </template>

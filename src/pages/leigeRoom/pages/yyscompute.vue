@@ -121,7 +121,7 @@ export default {
 <style lang="scss" scoped>
   $fs: 16px;
   .yys-container {
-    height: calc(100vh - 20px);
+    height: calc(100vh - 120px);
     margin: 10px;
     font-size: $fs;
     display: flex;

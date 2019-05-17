@@ -86,7 +86,7 @@ import LeigeRouter from '@/pages/leigeRoom/router' // 磊哥空间
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   //默认为hash模式 #   
   //mode: 'history',  改为history模式  /形式展现   但是会有问题 比如index.html什么的 需要跟后端做配置，所以就用默认hash模式就好
   routes: [
@@ -197,3 +197,11 @@ export default new Router({
     },
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  // 设置title标题
+  document.title = to.meta.title || '冉'
+  next()
+})
+
+export default router

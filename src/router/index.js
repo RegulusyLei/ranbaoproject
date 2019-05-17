@@ -73,10 +73,12 @@ import Route from '@/pages/route'
 import RouteDtail from '@/pages/routeDtail'
 import RouteDtail2 from '@/pages/routeDtail2'
 import RouteRes from '@/pages/routeRes'
-import RoutePush from '@/pages/RoutePush'
-import RouteSon from '@/pages/RouteSon'
-import RouteSon1 from '@/pages/RouteSon1'
-import RouteSon2 from '@/pages/RouteSon2'
+import RoutePush from '@/pages/routePush'
+import RouteSon from '@/pages/routeSon'
+import RouteSon1 from '@/pages/routeSon1'
+import RouteSon2 from '@/pages/routeSon2'
+import MintUI from '@/pages/mintUI'
+import ElementUI from '@/pages/elementUI'
 
 
 
@@ -177,7 +179,16 @@ export default new Router({
         },
       ]
     },
-   
+    {
+      path: '/mintUI',
+      name: 'mintUI',
+      component: MintUI
+    },
+    {
+      path: '/elementUI',
+      name: 'elementUI',
+      component: ElementUI
+    },
     //路由重定向--遇到没有设定的路由跳转到指定路由
     {
       path: '*',

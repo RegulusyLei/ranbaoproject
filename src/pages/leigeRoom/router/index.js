@@ -1,6 +1,6 @@
 import Home from '../pages/home'
 import YYScom from '../pages/yyscompute' // 关于阴阳师计算属性
-import Unicode from '../pages/unicode' // 关于阴阳师计算属性
+import Unicode from '../pages/unicode' // 查看Unicode对应的符号
 import Page404 from '../pages/fourzerofour' // 404
 
 const baseRoomTitle = '磊'

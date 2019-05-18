@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <el-button><router-link to="/leige">Let's go to LeiGe Room !!!</router-link></el-button>
     <h1>HelloWorld</h1>
     <!-- <img src="@/assets/logo.png" alt="">
     <h1>{{ msg }}</h1>

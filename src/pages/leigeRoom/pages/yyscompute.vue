@@ -131,8 +131,6 @@ export default {
       border: 1px solid #a1b2c3;
       margin-right: 10px;
     }
-    .left {
-    }
     .center {
       > div {
         display: flex;

@@ -1,5 +1,6 @@
 import Home from '../pages/home'
 import YYScom from '../pages/yyscompute' // 关于阴阳师计算属性
+import YYSRes from '../pages/yysresource' // 关于阴阳师网络资源
 import Unicode from '../pages/unicode' // 查看Unicode对应的符号
 import Page404 from '../pages/fourzerofour' // 404
 
@@ -16,6 +17,12 @@ export default [
         path: 'yyscom',
         name: 'YYScom',
         component: YYScom,
+        meta: { title: `${baseRoomTitle}/阴阳师` }
+      },
+      {
+        path: 'yysres',
+        name: 'YYSRes',
+        component: YYSRes,
         meta: { title: `${baseRoomTitle}/阴阳师` }
       },
       {

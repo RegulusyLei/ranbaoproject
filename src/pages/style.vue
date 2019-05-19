@@ -23,9 +23,15 @@
         <!-- 绑定动态宽高 -->
         <div class="bgColor" :style="{width:boxWidth+'px',height:`${boxHeight}px`}">这是一个盒子</div>
 
+        <br>
+        <h3>{{$store.state.count}}</h3>
+        <button @click="incCount">增加count+</button>
     </div>
 </template>
 <script>
+
+import store from '@/vuex/store.js'
+
 export default {
     data(){
         return{
@@ -37,6 +43,15 @@ export default {
             boxWidth: 300,
             boxHeight: 300,
 
+        }
+    },
+    store,
+    methods:{
+        incCount(){
+            
+            this.$store.commit('inCount')
+
+            this.$store.dispatch('incCount');
         }
     }
    

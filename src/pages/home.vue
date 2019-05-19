@@ -25,9 +25,25 @@
         </ul>
         </li>
     </ul>
+
+    <h5>{{$store.state.count}}</h5>
+    <h5>{{this.$store.state.count}}</h5>
+    <div>
+      <p>人民币{{name}}，相当于{{nameLength}}美元</p>
+      <input type="text" v-model="name">
+    </div>
+    <br>
+    <button @click="incCount">改变state里边的数据--增加数量+</button>
+
+    <!-- 获取getters的返回值 -->
+    <h3>{{$store.getters.computedCount}}</h3>
+
+
+
   </div>
 </template>
 <script>
+import store from '@/vuex/store.js'
  export default {  //固定语法
   name: 'App', //可删掉
   data(){
@@ -59,7 +75,29 @@
             {"title":"国际新闻222"},
           ]
         }
-      ]
+      ],
+      name: ''
+    }
+  },
+  store,
+  methods:{
+      incCount () {
+
+        //触发mutations 更改state数据
+        this.$store.commit('inCount')
+
+        //mutations传参
+        this.$store.commit('inCount',this.list)
+
+      //触发action去触发mutations更改state数据
+        this.$store.dispatch('incCount');
+
+      }
+  },
+  computed: {
+    nameLength () {
+      console.log(this)
+      return this.name.length
     }
   }
 }

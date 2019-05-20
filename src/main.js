@@ -4,7 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import storage from '@/utils/storage'
+
+//使用vue-resource
 import VueResource from 'vue-resource'
+Vue.use(VueResource) //vue-resource配置
 
 // 使用mint-ui
 import Mint from 'mint-ui'
@@ -23,7 +26,7 @@ Vue.use(MuseUI)
 
 Vue.config.productionTip = false
 Vue.prototype.$storage = storage  //自定义方法一般用$做前缀
-Vue.use(VueResource) //vue-resource配置
+
 
 /* eslint-disable no-new */
 new Vue({

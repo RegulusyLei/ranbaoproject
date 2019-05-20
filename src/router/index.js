@@ -69,6 +69,7 @@ import TodoList from '@/pages/todolist'
 import Storage from '@/pages/storage'
 import Comp from '@/components/comp'
 import Resource from '@/pages/resource'
+import Axios from '@/pages/axios'
 import Route from '@/pages/route'
 import RouteDtail from '@/pages/routeDtail'
 import RouteDtail2 from '@/pages/routeDtail2'
@@ -137,6 +138,11 @@ const router = new Router({
       path: '/resource',
       name: 'resource',
       component: Resource
+    },
+    {
+      path: '/axios',
+      name: 'axios',
+      component: Axios
     },
     {
       path: '/route',

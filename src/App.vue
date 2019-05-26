@@ -35,7 +35,12 @@
   color: #2c3e50;
   margin-top: 60px;
 } */
+/* html {height: 100%;} */
 body{
   background-color: #e6e6e6;
+  /* height: 100%; */
+}
+#app {
+  height: calc(100vh);
 }
 </style>

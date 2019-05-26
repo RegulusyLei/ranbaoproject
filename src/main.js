@@ -24,7 +24,7 @@ import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 Vue.use(MuseUI)
 
-// // 使用vue-jsonp解决前端跨域问题
+// 使用vue-jsonp解决前端跨域问题
 // import VueJsonp from 'vue-jsonp'
 // Vue.use(VueJsonp)
 

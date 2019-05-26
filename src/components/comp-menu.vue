@@ -13,9 +13,9 @@
           <i :class="item.icon"></i>
           <span>{{item.name}}</span>
         </template>
-        <el-menu-item-group>
+        <!-- <el-menu-item-group> -->
           <el-menu-item  v-for="(items, indexs) in item.list" :key="indexs" :index="items.index">{{items.name}}</el-menu-item>
-        </el-menu-item-group>
+        <!-- </el-menu-item-group> -->
       </el-submenu>
     </el-menu>
   </el-col>

@@ -25,5 +25,16 @@
         "name": "todolist"
       }
     ]
+  },
+  {
+    "index": "2",
+    "name": "Rose工作站",
+    "icon": "el-icon-cherry",
+    "list": [
+      {
+        "index": "/rose/echarts",
+        "name": "echarts"
+      }
+    ]
   }
 ]

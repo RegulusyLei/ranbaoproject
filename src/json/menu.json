@@ -1,0 +1,29 @@
+[
+  {
+    "index": "1",
+    "name": "Demo工作站",
+    "icon": "el-icon-location",
+    "list": [
+      {
+        "index": "/demo/style",
+        "name": "style"
+      },
+      {
+        "index": "/demo/axios",
+        "name": "axios"
+      },
+      {
+        "index": "/demo/resource",
+        "name": "vue-resource"
+      },
+      {
+        "index": "/demo/elementUI",
+        "name": "elementUI"
+      },
+      {
+        "index": "/demo/todolist",
+        "name": "todolist"
+      }
+    ]
+  }
+]

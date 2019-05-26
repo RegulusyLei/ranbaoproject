@@ -28,7 +28,7 @@ export default [
     meta: { title: baseRoomTitle },
     children: [
       {
-        path: '/demo-home',
+        path: 'demo-home',
         name: 'demoHome',
         component: DemoHome,
         children: [
@@ -40,62 +40,62 @@ export default [
         ]
       },
       {
-        path: '/style',
+        path: 'style',
         name: 'style',
         component: Style
       },
       {
-        path: '/eventdom',
+        path: 'eventdom',
         name: 'eventdom',
         component: Eventdom
       },
       {
-        path: '/todolist',
+        path: 'todolist',
         name: 'todolist',
         component: TodoList
       },
       {
-        path: '/storage',
+        path: 'storage',
         name: 'storage',
         component: Storage
       },
       {
-        path: '/resource',
+        path: 'resource',
         name: 'resource',
         component: Resource
       },
       {
-        path: '/axios',
+        path: 'axios',
         name: 'axios',
         component: Axios
       },
       {
-        path: '/route',
+        path: 'route',
         name: 'route',
         component: Route
       },
       {
-        path: '/routeDtail/:sb',
+        path: 'routeDtail/:sb',
         name: 'routeDtail',
         component: RouteDtail
       },
       {
-        path: '/routeDtail2',
+        path: 'routeDtail2',
         name: 'routeDtail2',
         component: RouteDtail2
       },
       {
-        path: '/routeRes',
+        path: 'routeRes',
         name: 'routeRes',
         component: RouteRes
       },
       {
-        path: '/routePush',
+        path: 'routePush',
         name: 'routePush',
         component: RoutePush
       },
       {
-        path: '/routeSon',
+        path: 'routeSon',
         name: 'routeSon',
         component: RouteSon,
         children:[
@@ -112,17 +112,17 @@ export default [
         ]
       },
       {
-        path: '/mintUI',
+        path: 'mintUI',
         name: 'mintUI',
         component: MintUI
       },
       {
-        path: '/elementUI',
+        path: 'elementUI',
         name: 'elementUI',
         component: ElementUI
       },
       {
-        path: '/es6',
+        path: 'es6',
         name: 'es6',
         component: Es6
       }

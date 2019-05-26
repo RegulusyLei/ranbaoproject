@@ -72,14 +72,16 @@ const router = new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      children: [
+        ...DemoRouter,
+        ...LeigeRouter
+      ]
     },
     { //路由重定向--遇到没有设定的路由跳转到指定路由
       path: '*',
       redirect: '/'
-    },
-    ...DemoRouter,
-    ...LeigeRouter
+    }
   ]
 })
 

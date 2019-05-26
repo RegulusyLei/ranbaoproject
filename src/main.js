@@ -24,6 +24,10 @@ import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 Vue.use(MuseUI)
 
+// 使用vue-jsonp解决前端跨域问题
+import VueJsonp from 'vue-jsonp'
+Vue.use(VueJsonp)
+
 Vue.config.productionTip = false
 Vue.prototype.$storage = storage  //自定义方法一般用$做前缀
 

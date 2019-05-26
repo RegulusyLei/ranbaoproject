@@ -61,28 +61,30 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Home from '@/pages/home'
-import Aaa from '@/pages/aaa'
-import Style from '@/pages/style'
-import Eventdom from '@/pages/eventdom'
-import TodoList from '@/pages/todolist'
-import Storage from '@/pages/storage'
+import DemoHome from '@/pages/room-demo/home'
+import Aaa from '@/pages/room-demo/aaa'
+import Style from '@/pages/room-demo/style'
+import Eventdom from '@/pages/room-demo/eventdom'
+import TodoList from '@/pages/room-demo/todolist'
+import Storage from '@/pages/room-demo/storage'
 import Comp from '@/components/comp'
-import Resource from '@/pages/resource'
-import Axios from '@/pages/axios'
-import Route from '@/pages/route'
-import RouteDtail from '@/pages/routeDtail'
-import RouteDtail2 from '@/pages/routeDtail2'
-import RouteRes from '@/pages/routeRes'
-import RoutePush from '@/pages/routePush'
-import RouteSon from '@/pages/routeSon'
-import RouteSon1 from '@/pages/routeSon1'
-import RouteSon2 from '@/pages/routeSon2'
-import MintUI from '@/pages/mintUI'
-import ElementUI from '@/pages/elementUI'
-import Es6 from '@/pages/es6'
+import Resource from '@/pages/room-demo/resource'
+import Axios from '@/pages/room-demo/axios'
+import Route from '@/pages/room-demo/route'
+import RouteDtail from '@/pages/room-demo/routeDtail'
+import RouteDtail2 from '@/pages/room-demo/routeDtail2'
+import RouteRes from '@/pages/room-demo/routeRes'
+import RoutePush from '@/pages/room-demo/routePush'
+import RouteSon from '@/pages/room-demo/routeSon'
+import RouteSon1 from '@/pages/room-demo/routeSon1'
+import RouteSon2 from '@/pages/room-demo/routeSon2'
+import MintUI from '@/pages/room-demo/mintUI'
+import ElementUI from '@/pages/room-demo/elementUI'
+import Es6 from '@/pages/room-demo/es6'
 
 import LeigeRouter from '@/pages/leigeRoom/router' // 磊哥空间
+
+import Home from '@/pages/home'
 
 
 
@@ -99,9 +101,9 @@ const router = new Router({
       component: HelloWorld
     },
     {
-      path: '/home',
-      name: 'home',
-      component: Home,
+      path: '/demo-home',
+      name: 'demoHome',
+      component: DemoHome,
       children: [
         {
           path: 'aaa',
@@ -201,6 +203,11 @@ const router = new Router({
       path: '/es6',
       name: 'es6',
       component: Es6
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home
     },
     //路由重定向--遇到没有设定的路由跳转到指定路由
     {

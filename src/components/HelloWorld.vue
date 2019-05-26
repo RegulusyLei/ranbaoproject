@@ -61,16 +61,31 @@
               <i>我是图标</i>
               分组一
             </span> -->
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
+            <el-menu-item index="1-1"><router-link to="/home">home</router-link></el-menu-item>
+            <el-menu-item index="1-2"><router-link to="/home/aaa">aaa</router-link></el-menu-item>
+            <el-menu-item index="1-3"><router-link to="/storage">web存储storage</router-link></el-menu-item>
+            <el-menu-item index="1-4"><router-link to="/style">style</router-link></el-menu-item>
+            <el-menu-item index="1-5"><router-link to="/todolist">todolist</router-link></el-menu-item>
+            <el-menu-item index="1-6"><router-link to="/route">route</router-link></el-menu-item>
+            <el-menu-item index="1-7"><router-link to="/routePush">routePush</router-link></el-menu-item>
+            <el-menu-item index="1-8"><router-link to="/routeRes">routeRes</router-link></el-menu-item>
           </el-menu-item-group>
-          <el-menu-item-group title="分组2">
+          <!-- <el-menu-item-group title="分组2">
             <el-menu-item index="1-3">选项3</el-menu-item>
-          </el-menu-item-group>
-          <el-submenu index="1-4">
-            <span slot="title">选项4</span>
-            <el-menu-item index="1-4-1">选项1</el-menu-item> 
+          </el-menu-item-group> -->
+          <el-submenu index="1-9">
+            <span slot="title"><router-link to="/routeSon">routeSon</router-link></span>
+            <el-menu-item index="1-9-1"><router-link to="/routeSon/routeSon1">routeSon1</router-link></el-menu-item> 
+            <el-menu-item index="1-9-2"><router-link to="/routeSon/routeSon2">routeSon2</router-link></el-menu-item> 
           </el-submenu>
+          <el-menu-item-group>
+         
+            <el-menu-item index="1-10"><router-link to="/elementUI">elementUI</router-link></el-menu-item>
+            <el-menu-item index="1-11"><router-link to="/mintUI">mintUI(没开发)</router-link></el-menu-item>
+            <el-menu-item index="1-12"><router-link to="/eventdom">eventdom</router-link></el-menu-item>
+          
+          </el-menu-item-group>
+
         </el-submenu>
 
         <el-submenu index="2">

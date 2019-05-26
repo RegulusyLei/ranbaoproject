@@ -80,6 +80,7 @@ import RouteSon1 from '@/pages/routeSon1'
 import RouteSon2 from '@/pages/routeSon2'
 import MintUI from '@/pages/mintUI'
 import ElementUI from '@/pages/elementUI'
+import Es6 from '@/pages/es6'
 
 import LeigeRouter from '@/pages/leigeRoom/router' // 磊哥空间
 
@@ -195,6 +196,11 @@ const router = new Router({
       path: '/elementUI',
       name: 'elementUI',
       component: ElementUI
+    },
+    {
+      path: '/es6',
+      name: 'es6',
+      component: Es6
     },
     //路由重定向--遇到没有设定的路由跳转到指定路由
     {

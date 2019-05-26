@@ -69,9 +69,7 @@
           </el-menu-item-group>
           <el-submenu index="1-4">
             <span slot="title">选项4</span>
-            <el-menu-item index="1-4-1">选项1</el-menu-item> 它 懂？
-            <!-- 这个写死了 对 聪明 你可以写个变量 比如 currentMenu -->
-
+            <el-menu-item index="1-4-1">选项1</el-menu-item> 
           </el-submenu>
         </el-submenu>
 
@@ -113,8 +111,9 @@ export default {
     return {
 
       msg: 'Welcome to Your Vue.js App',
-      isCollapse: true,
-      currentMenu:''
+      isCollapse: false,
+      currentMenu: ''
+      
 
     }
 

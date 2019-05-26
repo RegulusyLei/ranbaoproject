@@ -3,18 +3,25 @@
     <el-container class="ele-container">
       <el-header>Header</el-header>
       <el-container>
-        <el-aside width="300px">Aside</el-aside>
+        <el-aside width="250px">
+          <compMenu></compMenu>
+        </el-aside>
         <el-main>Main</el-main>
       </el-container>
     </el-container>
   </div>
 </template>
 <script>
+import compMenu from '@/components/comp-menu'
 export default {
   data(){
     return{
 
     }
+
+  },
+  components:{
+    compMenu
   }
 }
 </script>
@@ -36,8 +43,8 @@ $height: 70px;
   }
 
   aside {
-    
-    background-color: aquamarine;
+    height: 100%;
+    background-color: #FFF;
   }
 
   main {

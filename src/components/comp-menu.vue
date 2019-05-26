@@ -6,7 +6,9 @@
       :default-active="activeMenu"
       class="el-menu-vertical-demo"
       @select="handleSelect"
-
+      background-color="#0f5858"
+      text-color="#FFF"
+      active-text-color="#05ae91"
      >
       <el-submenu v-for="(item, index) in menu" :key="index" :index="item.index">
         <template slot="title">
@@ -32,10 +34,6 @@ export default {
   },
   methods: {
     handleSelect(index){
-      // console.log("index")
-      // console.log(index)
-      // console.log("indexPath")
-      // console.log(indexPath)
       this.$router.push({path: index})
     }
     },
@@ -52,7 +50,5 @@ export default {
 <style lang="scss" scoped>
   .el-col {
     width: 100%;
-    // overflow: hidden;
-    // overflow-y: scroll;
   }
 </style>

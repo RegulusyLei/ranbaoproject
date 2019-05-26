@@ -13,7 +13,8 @@
       </el-menu-item>
       <el-menu-item :index="baseRouter">首页</el-menu-item>
       <el-menu-item :index="`${baseRouter}/yyscom`">阴阳师计算器</el-menu-item>
-      <el-menu-item :index="`${baseRouter}/yysres`">阴阳师资源</el-menu-item>
+      <el-menu-item :index="`${baseRouter}/yysres`">阴阳师插画</el-menu-item>
+      <el-menu-item :index="`${baseRouter}/yyssounds`">阴阳师语音</el-menu-item>
       <el-menu-item :index="`${baseRouter}/unicode`">Unicode对应符号</el-menu-item>
       <el-submenu index="1">
         <template slot="title">临时占位以后拓展</template>

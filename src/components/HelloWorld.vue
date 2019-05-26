@@ -43,7 +43,7 @@
         <el-radio-button :label="true">收起</el-radio-button>
       </el-radio-group>
       <el-menu
-        :default-active="currentMenu"  你就可以找 谁的index是 1-4-1 对不对 ? 和颜色是一样的 点了谁 谁的index就被写在这里了
+        :default-active="currentMenu"  
         class="el-menu-vertical-demo"
         text-color="#fff"
         active-text-color="rgb(123,123,123)"
@@ -70,7 +70,7 @@
           <el-submenu index="1-4">
             <span slot="title">选项4</span>
             <el-menu-item index="1-4-1">选项1</el-menu-item> 它 懂？
-            这个写死了 对 聪明 你可以写个变量 比如 currentMenu
+            <!-- 这个写死了 对 聪明 你可以写个变量 比如 currentMenu -->
 
           </el-submenu>
         </el-submenu>
@@ -114,7 +114,7 @@ export default {
 
       msg: 'Welcome to Your Vue.js App',
       isCollapse: true,
-      
+      currentMenu:''
 
     }
 
@@ -129,6 +129,9 @@ export default {
       console.log(key, keyPath);
     }
 
+  },
+  mounted(){
+    console.log(this)
   }
 }
 </script>

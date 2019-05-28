@@ -62,7 +62,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import DemoRouter from '@/pages/room-demo/router' // demo空间
 import LeigeRouter from '@/pages/room-leige/router' // 磊哥空间
-import RoseRouter from '@/pages/room-rose/router' // 磊哥空间
+import RoseRouter from '@/pages/room-rose/router' // 冉姐空间
 
 import Home from '@/pages/home' // 主页
 

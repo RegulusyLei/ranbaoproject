@@ -6,6 +6,7 @@
         <div class="arrow"></div>
         <!-- 呼吸灯 -->
         <div class="huxideng">呼吸灯</div>
+         <div id="container1" style="height: 100%"></div>
     </div>
   </div>
 </template>
@@ -16,6 +17,29 @@ export default {
     return{
 
     }
+  },
+  mounted(){
+    var dom = document.getElementById("container1");
+			var myChart = echarts.init(dom);
+			var app = {};
+		var 	option = null;
+			option = {
+			    xAxis: {
+			        type: 'category',
+			        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [{
+			        data: [820, 932, 901, 934, 1290, 1330, 1320],
+			        type: 'line'
+			    }]
+			};
+			;
+			if (option && typeof option === "object") {
+			    myChart.setOption(option, true);
+			}
   }
 }
 </script>

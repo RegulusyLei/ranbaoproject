@@ -36,5 +36,16 @@
         "name": "echarts"
       }
     ]
+  },
+  {
+    "index": "3",
+    "name": "Zola工作站",
+    "icon": "el-icon-cherry",
+    "list": [
+      {
+        "index": "/leige",
+        "name": "666"
+      }
+    ]
   }
 ]

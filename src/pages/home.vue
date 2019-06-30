@@ -42,10 +42,10 @@ $height: 70px;
   }
   aside {
     height: 100%;
-    background-color: #FFF;
+    background-color: #0f5858;
   }
   main {
-    background-color: coral;
+    background-color: #FFF;
   }
 }
 </style>

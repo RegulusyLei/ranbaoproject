@@ -13,49 +13,39 @@
     </el-container>
   </div>
 </template>
+
 <script>
 import compMenu from '@/components/comp-menu'
 export default {
-  data(){
-    return{
-
+  data () {
+    return {
     }
-
   },
-  components:{
+  components: {
     compMenu
   }
 }
 </script>
+
 <style lang="scss" scoped>
 $height: 70px;
-.home-container{
-   height: 100%;
-
-   .ele-container {
-
-     height: 100%;
-   }
-
-   .el-header {
+.home-container {
+  height: 100%;
+  .ele-container {
+    height: 100%;
+  }
+  .el-header {
     height: $height !important;
     line-height: $height;
     text-align: center;
     background-color: cadetblue;
   }
-
   aside {
     height: 100%;
     background-color: #FFF;
   }
-
   main {
-    
     background-color: coral;
   }
-  
 }
- 
-
-
 </style>

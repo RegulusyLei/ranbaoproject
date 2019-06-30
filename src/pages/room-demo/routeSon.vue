@@ -1,20 +1,19 @@
 <template>
-    <div>
-        <h2>路由嵌套</h2>
-        
-        <ul>
-            <li>
-                <router-link to="/routeSon/routeSon1">tab1</router-link> 
-            </li>
-            <li>
-                 <router-link to="/routeSon/routeSon2">tab2</router-link> 
-            </li>
-        </ul>
-        <div class="content">
-            <router-view></router-view>
-        </div>
+  <div>
+    <h2>路由嵌套</h2>
 
+    <ul>
+      <li>
+        <router-link to="/routeSon/routeSon1">tab1</router-link>
+      </li>
+      <li>
+        <router-link to="/routeSon/routeSon2">tab2</router-link>
+      </li>
+    </ul>
+    <div class="content">
+      <router-view></router-view>
     </div>
+  </div>
 </template>
 <script>
 /*
@@ -48,16 +47,10 @@
 */
 
 export default {
-    data(){
-        return{
-
-        }
-    },
-    methods:{
-
-    },
-    mounted(){
-
-    }
+  data () {
+    return {}
+  },
+  methods: {},
+  mounted () {}
 }
 </script>

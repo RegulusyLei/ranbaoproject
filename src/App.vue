@@ -10,18 +10,15 @@
   1、引入组件  import  CompName  from   ''
   2、注册挂载组件  components:{}
   3、在模板中使用  <CompName></CompName>
-  
 */
 
- export default {  //固定语法
-  name: 'App', //可删掉
-  data(){
-    return{
-     
+export default { // 固定语法
+  name: 'App', // 可删掉
+  data () {
+    return {
     }
   },
-  components:{
- 
+  components: {
   }
 }
 </script>

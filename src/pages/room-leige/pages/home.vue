@@ -14,17 +14,16 @@
 </template>
 
 <script>
-  import leiMenu from '../components/menu'
-  export default {
-    data () {
-      return {
-
-      }
-    },
-    components: {
-      leiMenu
+import leiMenu from '../components/menu'
+export default {
+  data () {
+    return {
     }
+  },
+  components: {
+    leiMenu
   }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -35,13 +35,10 @@
   template: '<App/>'
 })
 
-
-
 5.路由出口（动态加载路由的位置）
 
   <router-view></router-view>
 
- 
 */
 
 /**
@@ -49,14 +46,13 @@
  * 1、<router-link to="路由"></router-link>
  * 2、<router-link :to="路由/参数"></router-link>  this.$route.params.sb  注：path中配置/:sb
  * 3、<router-link to="路由?aid=值"></router-link>  this.$route.query.aid
- * 4、编程式导航跳转  
+ * 4、编程式导航跳转
  *    this.$router.push({'path':'route'})
  *    this.$router.push({'path':'/routeRes/495'})
  *    this.$router.push({'path':'/routeRes?aid=495'})
  * 5、命名式跳转  利用path的name跳转
- *    this.$router.push({'name','route'})  
+ *    this.$router.push({'name','route'})
  */
-
 
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -80,7 +76,7 @@ const router = new Router({
         ...RoseRouter
       ]
     },
-    { //路由重定向--遇到没有设定的路由跳转到指定路由
+    { // 路由重定向--遇到没有设定的路由跳转到指定路由
       path: '*',
       redirect: '/'
     }

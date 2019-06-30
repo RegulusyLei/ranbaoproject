@@ -29,7 +29,7 @@ export default {
       this.$jsonp(`http://yys.res.netease.com/pc/zt/20161108171335/data/shishen/${num}.png`, {}).then(res => {
         console.log(res)
       }).catch(err => {
-　　    console.log(err)
+        console.log(err)
       })
     }
   }

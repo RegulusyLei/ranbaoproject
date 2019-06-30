@@ -1,21 +1,16 @@
-//main.js把该方法写入原型prototype
+// main.js把该方法写入原型prototype
 const storage = {
-  set(key,value){
-      localStorage.setItem(key,JSON.stringify(value))
+  set (key, value) {
+    localStorage.setItem(key, JSON.stringify(value))
   },
-  get(key){
+  get (key) {
     return JSON.parse(localStorage.getItem(key))
   },
-  remove(key){
-    localStorage.removeItem(key);
+  remove (key) {
+    localStorage.removeItem(key)
   },
-  // remove:key=>{
-    
-  // }
-  clear(){
+  clear () {
     localStorage.clear()
   }
- 
-
 }
-export default storage;
+export default storage

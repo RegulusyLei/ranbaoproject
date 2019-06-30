@@ -37,21 +37,21 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        baseRouter: '/leige'
-      }
-    },
-    computed: {
-      activeIndex () { // 当前地址
-        return this.$route.path
-      }
-    },
-    methods: {
-      handleSelect(key) { // 路由跳转
-        this.$router.push({ path: key })
-      }
+export default {
+  data () {
+    return {
+      baseRouter: '/leige'
+    }
+  },
+  computed: {
+    activeIndex () { // 当前地址
+      return this.$route.path
+    }
+  },
+  methods: {
+    handleSelect (key) { // 路由跳转
+      this.$router.push({ path: key })
     }
   }
+}
 </script>

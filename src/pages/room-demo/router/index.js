@@ -25,7 +25,9 @@ export default [
     path: '/demo',
     name: 'DemoHome',
     component: DemoHome,
-    meta: { title: baseRoomTitle },
+    meta: {
+      title: baseRoomTitle
+    },
     children: [
       {
         path: 'demo-home',
@@ -98,7 +100,7 @@ export default [
         path: 'routeSon',
         name: 'routeSon',
         component: RouteSon,
-        children:[
+        children: [
           {
             path: 'routeSon1',
             name: 'routeSon1',
@@ -108,7 +110,7 @@ export default [
             path: 'routeSon2',
             name: 'routeSon2',
             component: RouteSon2
-          },
+          }
         ]
       },
       {

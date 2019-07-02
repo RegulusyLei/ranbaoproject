@@ -5,7 +5,7 @@
       <button @click="playOrPaused">{{play ? '暂停' : '播放'}}</button>
       <button>下一首</button>
     </div>
-    <audio ref="musicDom" :src="musicSrc" autoplay></audio>
+    <audio ref="musicDom" :src="musicSrc"></audio>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     return {
       musicDom: null, // 音乐标签对象
       musicSrc, // 音乐地址
-      play: true // 是否播放
+      play: false // 是否播放
     }
   },
   mounted () {

@@ -1,4 +1,5 @@
 import echarts from '../pages/echarts'
+import comchat from '../pages/comchat'
 
 export default [
   {
@@ -7,7 +8,12 @@ export default [
     component: echarts,
     children: [
       {
-        path: 'echarts'
+        path: 'echarts',
+        component: echarts
+      },
+      {
+        path: 'comchat',
+        component: comchat
       }
     ]
   }

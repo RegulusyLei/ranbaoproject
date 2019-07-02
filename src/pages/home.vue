@@ -1,7 +1,7 @@
 <template>
   <div class="home-container">
     <el-container class="ele-container">
-      <el-header>Header</el-header>
+      <el-header></el-header>
       <el-container>
         <el-aside width="250px">
           <compMenu></compMenu>

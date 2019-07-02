@@ -20,10 +20,15 @@ import 'element-ui/lib/theme-chalk/index.css'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 
+// 自定义组件
+import musicBox from '@/components/musicBox'
+
 Vue.use(VueResource) // vue-resource配置
 Vue.use(Mint)
 Vue.use(ElementUI)
 Vue.use(MuseUI)
+
+Vue.component('music-box', musicBox)
 
 // 使用vue-jsonp解决前端跨域问题
 // import VueJsonp from 'vue-jsonp'

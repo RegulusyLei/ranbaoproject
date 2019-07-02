@@ -2,6 +2,7 @@
 <!-- vue的模板里面 所有的内容要被一个根节点包含起来 -->
   <div id="app">
     <router-view></router-view>
+    <music-box></music-box>
   </div>
 </template>
 <script>

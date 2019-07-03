@@ -48,7 +48,18 @@
     "list": [
       {
         "index": "/leige",
-        "name": "就是这么屌"
+        "name": "来吧大兄弟"
+      }
+    ]
+  },
+  {
+    "index": "4",
+    "name": "测试工作站",
+    "icon": "el-icon-s-tools",
+    "list": [
+      {
+        "index": "/test/test1",
+        "name": "搞点事情"
       }
     ]
   }

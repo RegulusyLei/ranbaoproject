@@ -59,6 +59,7 @@ import Router from 'vue-router'
 import DemoRouter from '@/pages/room-demo/router' // demo空间
 import LeigeRouter from '@/pages/room-leige/router' // 磊哥空间
 import RoseRouter from '@/pages/room-rose/router' // 冉姐空间
+import TestRouter from '@/pages/room-test/router' // test空间
 
 import Home from '@/pages/home' // 主页
 
@@ -73,7 +74,8 @@ const router = new Router({
       children: [
         ...DemoRouter,
         ...LeigeRouter,
-        ...RoseRouter
+        ...RoseRouter,
+        ...TestRouter
       ]
     },
     { // 路由重定向--遇到没有设定的路由跳转到指定路由

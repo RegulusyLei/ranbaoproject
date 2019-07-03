@@ -4,7 +4,7 @@
       <li
         v-for="(item, index) in liList"
         :key="index"
-        :style="{'background-color': $store.state.colorObj[index] || '#fff'}"
+        :style="{'background-color': $store.state.colorObj[index] || activeColor(index)}"
         @click="chooseLi(index)">
         {{item.name}}
       </li>
@@ -29,6 +29,9 @@ export default {
   methods: {
     chooseLi (index) {
       this.$store.dispatch('doChangeIndex', index)
+    },
+    activeColor (index) {
+      if (this.$store.state.currentIndex === index) return 'pink'
     }
   }
 }

@@ -5,7 +5,7 @@
       <button @click="playOrPaused">{{play ? '暂停' : '播放'}}</button>
       <button>下一首</button>
     </div>
-    <audio ref="musicDom" :src="musicSrc"></audio>
+    <audio ref="musicDom" :src="musicSrc" controls></audio>
   </div>
 </template>
 
@@ -40,8 +40,8 @@ export default {
 <style lang="scss" scoped>
   .music-container {
     position: fixed;
-    top: 100px;
-    right: 100px;
+    top: 20px;
+    right: 20px;
     border: 1px solid #000;
     background-color: pink;
     padding: 20px;

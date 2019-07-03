@@ -37,7 +37,7 @@
       },
       {
         "index": "/rose/comchat",
-        "name": "comchat"
+        "name": "组件之间传值"
       }
     ]
   },

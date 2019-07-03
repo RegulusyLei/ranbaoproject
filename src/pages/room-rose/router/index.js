@@ -1,19 +1,22 @@
-import echarts from '../pages/echarts'
-import comchat from '../pages/comchat'
+import Home from '../pages/home'
+import Echarts from '../pages/echarts'
+import Comchat from '../pages/comchat'
 
 export default [
   {
     path: '/rose',
-    name: 'echarts',
-    component: echarts,
+    name: 'Home',
+    component: Home,
     children: [
       {
         path: 'echarts',
-        component: echarts
+        name: 'Echarts',
+        component: Echarts
       },
       {
         path: 'comchat',
-        component: comchat
+        name: 'Comchat',
+        component: Comchat
       }
     ]
   }

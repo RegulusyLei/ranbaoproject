@@ -29,7 +29,7 @@
   {
     "index": "2",
     "name": "Rose工作站",
-    "icon": "el-icon-cherry",
+    "iconsvg": "iconEMOJI-17",
     "list": [
       {
         "index": "/rose/echarts",
@@ -44,7 +44,7 @@
   {
     "index": "3",
     "name": "Zola工作站",
-    "icon": "el-icon-apple",
+    "iconsvg": "iconEMOJI-13",
     "list": [
       {
         "index": "/leige",
@@ -55,7 +55,7 @@
   {
     "index": "4",
     "name": "测试工作站",
-    "icon": "el-icon-s-tools",
+    "iconfont": "iconjinrong",
     "list": [
       {
         "index": "/test/test1",

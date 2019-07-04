@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="notCollapse ? 'min-width' : ''">
     <el-switch class="rb-switch" v-model="notCollapse">
     </el-switch>
     <el-menu
@@ -49,7 +49,7 @@ export default {
   mounted () {},
   computed: {
     activeMenu () {
-      return this.$route.path
+      return `/${this.$route.path.split('/')[1]}`
     }
   }
 }
@@ -74,5 +74,8 @@ export default {
       font-size: 1.5em;
       margin: 0 4px;
     }
+  }
+  .min-width {
+    min-width: 200px;
   }
 </style>

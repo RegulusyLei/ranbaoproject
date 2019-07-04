@@ -28,6 +28,7 @@ export default {
     height: 100%;
     .sys-content {
       height: calc(100% - 80px);
+      background-color: #BDCDE2;
     }
   }
 </style>

@@ -51,10 +51,16 @@ export default {
 <style lang="scss" scoped>
   .music-container {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 1px;
+    right: -380px;
+    width: 400px;
     border: 1px solid #000;
     background-color: pink;
     padding: 20px;
+    transition: right 100ms;
+  }
+  .music-container:hover {
+    cursor: pointer;
+    right: 1px;
   }
 </style>

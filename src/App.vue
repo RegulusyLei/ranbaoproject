@@ -25,14 +25,6 @@ export default { // 固定语法
 </script>
 
 <style>
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
 /* html {height: 100%;} */
 body{
   background-color: #e6e6e6;
@@ -40,5 +32,11 @@ body{
 }
 #app {
   height: calc(100vh);
+}
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 </style>

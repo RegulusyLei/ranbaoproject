@@ -1,6 +1,10 @@
 <template>
   <div class="music-container">
     <div class="box">
+      <i class="iconfont iconjiaoyichengbenfenxi"></i>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#iconEMOJI-25"></use>
+      </svg>
       <button>上一首</button>
       <button @click="playOrPaused">{{play ? '暂停' : '播放'}}</button>
       <button>下一首</button>
@@ -57,6 +61,9 @@ export default {
     background-color: pink;
     padding: 20px;
     .box {
+      .icon, .iconfont {
+        font-size: 50px;
+      }
     }
   }
 </style>

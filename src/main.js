@@ -23,6 +23,10 @@ import 'muse-ui/dist/muse-ui.css'
 // 自定义组件
 import musicBox from '@/components/musicBox'
 
+// iconfont
+import '@/assets/font/iconfont.css'
+import '@/assets/font/iconfont.js'
+
 Vue.use(VueResource) // vue-resource配置
 Vue.use(Mint)
 Vue.use(ElementUI)

@@ -3,7 +3,7 @@
     <el-container class="ele-container">
       <el-header></el-header>
       <el-container>
-        <el-aside width="250px">
+        <el-aside width="auto">
           <compMenu></compMenu>
         </el-aside>
         <el-main>
@@ -45,6 +45,7 @@ $height: 70px;
     background-color: #0f5858;
   }
   main {
+    padding: 10px;
     background-color: #FFF;
   }
 }

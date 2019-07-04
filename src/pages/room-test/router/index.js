@@ -1,5 +1,6 @@
 import Home from '../pages/home'
 import Test1 from '../pages/test1'
+import Test2 from '../pages/test2'
 
 export default [
   {
@@ -11,6 +12,11 @@ export default [
         path: 'test1',
         name: 'Test1',
         component: Test1
+      },
+      {
+        path: 'test2',
+        name: 'Test2',
+        component: Test2
       }
     ]
   }

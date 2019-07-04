@@ -60,6 +60,10 @@
       {
         "index": "/test/test1",
         "name": "搞点事情"
+      },
+      {
+        "index": "/test/test2",
+        "name": "类似系统"
       }
     ]
   }

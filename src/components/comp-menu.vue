@@ -1,8 +1,10 @@
 <template>
   <div>
-    <el-col :span="12">
-    <!-- <h5>默认颜色</h5> -->
+    <el-switch class="rb-switch" v-model="notCollapse">
+    </el-switch>
     <el-menu
+      :collapse="!notCollapse"
+      :collapse-transition="false"
       :default-active="activeMenu"
       class="rb-menu"
       @select="handleSelect"
@@ -23,7 +25,6 @@
         <!-- </el-menu-item-group> -->
       </el-submenu>
     </el-menu>
-  </el-col>
   </div>
 </template>
 
@@ -32,7 +33,8 @@ import menu from '@/json/menu.json'
 export default {
   data () {
     return {
-      menu
+      menu,
+      notCollapse: true
     }
   },
   methods: {
@@ -54,18 +56,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .el-col {
-    width: 100%;
-    .rb-menu {
-      .rb-icon {
-        font-size: 2em;
-        padding-top: 10px;
-        margin-right: 1px;
-      }
-      .rb-iconfont {
-        font-size: 1.5em;
-        margin: 0 4px;
-      }
+  .rb-switch {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5F9EA0;
+  }
+  .rb-menu {
+    border-right: 0;
+    .rb-icon {
+      font-size: 2em;
+      padding-top: 10px;
+      margin-right: 1px;
+    }
+    .rb-iconfont {
+      font-size: 1.5em;
+      margin: 0 4px;
     }
   }
 </style>

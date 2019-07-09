@@ -56,6 +56,7 @@
 
 import Vue from 'vue'
 import Router from 'vue-router'
+import Bus from '@/bus/bus.js'
 import DemoRouter from '@/pages/room-demo/router' // demo空间
 import LeigeRouter from '@/pages/room-leige/router' // 磊哥空间
 import RoseRouter from '@/pages/room-rose/router' // 冉姐空间
@@ -88,6 +89,8 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   // 设置title标题
   document.title = to.meta.title || '冉'
+  // 发送修改头像事件
+  Bus.$emit('changeAvatar')
   next()
 })
 

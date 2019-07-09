@@ -1,10 +1,12 @@
 <template>
   <div class="home-container">
     <el-container class="ele-container">
-      <el-header></el-header>
+      <el-header>
+        <comp-header></comp-header>
+      </el-header>
       <el-container>
         <el-aside width="auto">
-          <compMenu></compMenu>
+          <comp-menu></comp-menu>
         </el-aside>
         <el-main>
           <router-view></router-view>
@@ -15,6 +17,7 @@
 </template>
 
 <script>
+import compHeader from '@/components/comp-header'
 import compMenu from '@/components/comp-menu'
 export default {
   data () {
@@ -22,6 +25,7 @@ export default {
     }
   },
   components: {
+    compHeader,
     compMenu
   }
 }

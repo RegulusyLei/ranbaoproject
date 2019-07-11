@@ -3,6 +3,7 @@
     <el-autocomplete
       :fetch-suggestions="querySearch"
       @select="handleSelect"
+      type="number"
       placeholder="请输入内容"
       suffix-icon="el-icon-caret-bottom"
       v-model="value">
@@ -34,12 +35,17 @@ export default {
   methods: {
     // 输入匹配
     querySearch (queryString, cb) {
-      // 这里需要写一些逻辑去匹配options，queryString是输入的内容
-      cb(this.options) // 为了省事，不管输入啥，都把options返回，实际业务不这么做
+      cb(this.options)
     },
     // 处理下拉选中
     handleSelect (item) {
       if (item.value === 'Empty') this.value = ''
+    }
+  },
+  watch: {
+    value (val) {
+      const tempArr = String(val).split('.')
+      if (tempArr[1]) this.value = tempArr[0]
     }
   }
 }

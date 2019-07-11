@@ -64,6 +64,10 @@
       {
         "index": "/test/test2/view1",
         "name": "类似系统"
+      },
+      {
+        "index": "/test/test3",
+        "name": "专治各种疑难杂症"
       }
     ]
   }

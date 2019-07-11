@@ -2,7 +2,6 @@
   <div>
     <el-autocomplete
       :fetch-suggestions="querySearch"
-      @select="handleSelect"
       placeholder="请输入内容"
       suffix-icon="el-icon-caret-bottom"
       v-model="value">
@@ -35,10 +34,6 @@ export default {
     // 输入匹配
     querySearch (queryString, cb) {
       cb(this.options)
-    },
-    // 处理下拉选中
-    handleSelect (item) {
-      if (item.value === 'Empty') this.value = ''
     }
   },
   watch: {

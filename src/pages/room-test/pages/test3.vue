@@ -43,8 +43,13 @@ export default {
   },
   watch: {
     value (val) {
-      if (isNaN(Number(val)) || Number(val) < 0) this.value = '' // 保证数字且正数
-      if (val.includes('.')) this.value = val.replace(/\..*/, '') // 保证整数
+      if ((isNaN(Number(val)) && isNaN(parseInt(val))) || Number(val) < 0) { // 保证数字且正数
+        this.value = ''
+      } else if (isNaN(Number(val)) && !isNaN(parseInt(val))) { // 数字字母组合
+        this.value = String(parseInt(val))
+      } else if (val.includes('.')) { // 保证整数
+        this.value = val.replace(/\..*/, '')
+      }
     }
   }
 }

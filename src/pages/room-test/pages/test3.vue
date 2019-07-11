@@ -3,7 +3,6 @@
     <el-autocomplete
       :fetch-suggestions="querySearch"
       @select="handleSelect"
-      type="number"
       placeholder="请输入内容"
       suffix-icon="el-icon-caret-bottom"
       v-model="value">
@@ -44,8 +43,8 @@ export default {
   },
   watch: {
     value (val) {
-      const tempArr = String(val).split('.')
-      if (tempArr[1]) this.value = tempArr[0]
+      if (isNaN(Number(val)) || Number(val) < 0) this.value = '' // 保证数字且正数
+      if (val.includes('.')) this.value = val.replace(/\..*/, '') // 保证整数
     }
   }
 }

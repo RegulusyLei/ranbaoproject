@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <el-autocomplete
-      :fetch-suggestions="querySearch"
-      placeholder="请输入内容"
-      suffix-icon="el-icon-caret-bottom"
-      v-model="value">
-      <template slot-scope="{item}">
-        <div>
-          <i class="el-icon-success"></i>
-          <span>{{item.value}}</span>
-        </div>
-      </template>
-    </el-autocomplete>
+  <div class="collapse">
+    <div class="item" v-for="(item, index) in options" :key="index">
+      <p class="title">
+        <i class="el-icon-caret-bottom" @click="item.visible = !item.visible"></i>
+        <span>{{item.title}}</span>
+      </p>
+      <ul class="content" v-if="item.visible">
+        <li v-for="(items, indexs) in item.child" :key="indexs">{{item.title}}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -20,32 +17,38 @@ export default {
   data () {
     return {
       options: [
-        {value: 'Empty'},
-        {value: '1000'},
-        {value: '5000'},
-        {value: '10000'},
-        {value: '20000'},
-        {value: '50000'}
-      ],
-      value: ''
+        {
+          title: '标题内容',
+          visible: false,
+          child: [
+            { title: '子标题1' },
+            { title: '子标题2' },
+            { title: '子标题3' },
+            { title: '子标题4' },
+            { title: '子标题5' }
+          ]
+        }
+      ]
     }
   },
   methods: {
-    // 输入匹配
-    querySearch (queryString, cb) {
-      cb(this.options)
-    }
-  },
-  watch: {
-    value (val) {
-      if ((isNaN(Number(val)) && isNaN(parseInt(val))) || Number(val) < 0) { // 保证数字且正数
-        this.value = ''
-      } else if (isNaN(Number(val)) && !isNaN(parseInt(val))) { // 数字字母组合
-        this.value = String(parseInt(val))
-      } else if (val.includes('.')) { // 保证整数
-        this.value = val.replace(/\..*/, '')
-      }
+    handleChange (item) {
+      console.log(item)
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .collapse {
+    width: 500px;
+    .item {
+      border: 1px solid #d1d1d1;
+      .title {
+        margin: 0;
+        padding: 10px 0;
+        border: 1px solid #ddd;
+      }
+    }
+  }
+</style>

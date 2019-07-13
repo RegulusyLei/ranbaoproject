@@ -4,9 +4,12 @@
       <p class="title">
         <i class="el-icon-caret-bottom" @click="item.visible = !item.visible"></i>
         <span>{{item.title}}</span>
+        <button @click="item.dialog = !item.dialog">TBNK</button>
       </p>
       <ul class="content" v-if="item.visible">
-        <li v-for="(items, indexs) in item.child" :key="indexs">{{item.title}}</li>
+        <li v-for="(items, indexs) in item.child" :key="indexs">
+          <input type="text" v-model="items.title">
+        </li>
       </ul>
     </div>
   </div>
@@ -18,14 +21,25 @@ export default {
     return {
       options: [
         {
-          title: '标题内容',
+          title: 'Sample-Name',
           visible: false,
           child: [
-            { title: '子标题1' },
-            { title: '子标题2' },
-            { title: '子标题3' },
-            { title: '子标题4' },
-            { title: '子标题5' }
+            { title: 'tube-0001' },
+            { title: 'tube-0002' },
+            { title: 'tube-0003' },
+            { title: 'tube-0004' },
+            { title: 'tube-0005' }
+          ]
+        },
+        {
+          title: 'Sample-Name-002',
+          visible: false,
+          child: [
+            { title: 'tube-0001' },
+            { title: 'tube-0002' },
+            { title: 'tube-0003' },
+            { title: 'tube-0004' },
+            { title: 'tube-0005' }
           ]
         }
       ]

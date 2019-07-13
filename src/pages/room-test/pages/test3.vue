@@ -11,6 +11,9 @@
           <input type="text" v-model="items.title">
         </li>
       </ul>
+      <div class="dialog" v-if="item.dialog">
+        <p>{{item.template}}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -23,6 +26,8 @@ export default {
         {
           title: 'Sample-Name',
           visible: false,
+          dialog: false,
+          template: '模版1',
           child: [
             { title: 'tube-0001' },
             { title: 'tube-0002' },
@@ -34,6 +39,8 @@ export default {
         {
           title: 'Sample-Name-002',
           visible: false,
+          dialog: false,
+          template: '模版2',
           child: [
             { title: 'tube-0001' },
             { title: 'tube-0002' },
@@ -57,11 +64,19 @@ export default {
   .collapse {
     width: 500px;
     .item {
+      position: relative;
       border: 1px solid #d1d1d1;
       .title {
         margin: 0;
         padding: 10px 0;
         border: 1px solid #ddd;
+      }
+      .dialog {
+        right: -200px;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
       }
     }
   }

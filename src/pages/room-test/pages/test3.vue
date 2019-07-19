@@ -1,20 +1,25 @@
 <template>
-  <div class="collapse">
-    <div class="item" v-for="(item, index) in options" :key="index">
-      <p class="title">
-        <i class="el-icon-caret-bottom" @click="item.visible = !item.visible"></i>
-        <span>{{item.title}}</span>
-        <button @click="item.dialog = !item.dialog">TBNK</button>
-      </p>
-      <ul class="content" v-if="item.visible">
-        <li v-for="(items, indexs) in item.child" :key="indexs">
-          <input type="text" v-model="items.title">
-        </li>
-      </ul>
-      <div class="dialog" v-if="item.dialog">
-        <p>{{item.template}}</p>
-      </div>
-    </div>
+  <div class="table-wrap">
+    <table @mouseleave="handlemouseleave">
+      <thead>
+        <tr>
+          <th v-for="(item, index) in tableData.thead" :key="index">{{item}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item, index) in tableData.tbody" :key="index"
+          :style="`height: ${aaa}px;`"
+          @mousedown="handlemousedown"
+          @mousemove="handlemousemove"
+          @mouseup="handlemouseup">
+          <td>#{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.sex}}</td>
+          <td>{{item.favor}}</td>
+          <td>{{item.status}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
@@ -22,61 +27,65 @@
 export default {
   data () {
     return {
-      options: [
-        {
-          title: 'Sample-Name',
-          visible: false,
-          dialog: false,
-          template: '模版1',
-          child: [
-            { title: 'tube-0001' },
-            { title: 'tube-0002' },
-            { title: 'tube-0003' },
-            { title: 'tube-0004' },
-            { title: 'tube-0005' }
-          ]
-        },
-        {
-          title: 'Sample-Name-002',
-          visible: false,
-          dialog: false,
-          template: '模版2',
-          child: [
-            { title: 'tube-0001' },
-            { title: 'tube-0002' },
-            { title: 'tube-0003' },
-            { title: 'tube-0004' },
-            { title: 'tube-0005' }
-          ]
-        }
-      ]
+      tableData: {
+        thead: ['编号', '姓名', '性别', '爱好', '状态'],
+        tbody: [
+          { id: 1, name: '黄晓明', sex: '男', favor: '抽烟、喝酒、烫头。', status: '有效' },
+          { id: 2, name: '杨颖', sex: '女', favor: '拍戏', status: '无效' },
+          { id: 3, name: '邓超', sex: '男', favor: '邓超来了邓超来了', status: '有效' },
+          { id: 4, name: '孙俪', sex: '女', favor: '甄嬛传', status: '有效' },
+          { id: 5, name: '范冰冰', sex: '女', favor: '偷税漏税', status: '无效' }
+        ]
+      },
+      aaa: 0,
+      currentTr: '',
+      currentX: 0,
+      currentY: 0
     }
   },
   methods: {
-    handleChange (item) {
-      console.log(item)
+    handlemouseleave (e) {
+      this.move = false
+    },
+    handlemousedown (e) {
+      this.currentY = e.clientY
+      this.move = true
+    },
+    handlemousemove (e) {
+      if (this.move) {
+        console.log(e.clientY - this.currentY)
+        this.aaa = e.clientY - this.currentY
+      }
+    },
+    handlemouseup (e) {
+      this.move = false
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  .collapse {
-    width: 500px;
-    .item {
-      position: relative;
-      border: 1px solid #d1d1d1;
-      .title {
-        margin: 0;
-        padding: 10px 0;
-        border: 1px solid #ddd;
+  .table-wrap {
+    table {
+      border: 1px solid #000;
+      border-spacing: 0px;
+      thead {
+        th {
+          padding: 10px 0;
+          background-color: #d1d1d1;
+        }
       }
-      .dialog {
-        right: -200px;
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background-color: pink;
+      tbody {
+        tr {
+          cursor: pointer;
+          td {
+            min-width: 100px;
+            border-top: 1px solid #000;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+          }
+        }
       }
     }
   }

@@ -20,6 +20,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 
+// touch 事件
+import Vue2TouchEvents from 'vue2-touch-events'
+
 // 自定义组件
 import musicBox from '@/components/musicBox'
 
@@ -31,6 +34,7 @@ Vue.use(VueResource) // vue-resource配置
 Vue.use(Mint)
 Vue.use(ElementUI)
 Vue.use(MuseUI)
+Vue.use(Vue2TouchEvents)
 
 Vue.component('music-box', musicBox)
 

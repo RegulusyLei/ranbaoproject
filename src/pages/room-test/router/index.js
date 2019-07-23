@@ -2,6 +2,7 @@ import Home from '../pages/home'
 import Test1 from '../pages/test1'
 import Test2 from '../pages/test2'
 import Test3 from '../pages/test3'
+import Test4 from '../pages/test4'
 import View1 from '../pages/view/view1'
 import View2 from '../pages/view/view2'
 import View3 from '../pages/view/view3'
@@ -43,6 +44,11 @@ export default [
         path: 'test3',
         name: 'Test3',
         component: Test3
+      },
+      {
+        path: 'test4',
+        name: 'Test4',
+        component: Test4
       }
     ]
   }

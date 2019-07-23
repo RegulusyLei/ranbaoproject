@@ -68,6 +68,10 @@
       {
         "index": "/test/test3",
         "name": "专治各种疑难杂症"
+      },
+      {
+        "index": "/test/test4",
+        "name": "tree"
       }
     ]
   }

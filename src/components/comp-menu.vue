@@ -34,7 +34,7 @@ export default {
   data () {
     return {
       menu,
-      notCollapse: true
+      notCollapse: false
     }
   },
   methods: {

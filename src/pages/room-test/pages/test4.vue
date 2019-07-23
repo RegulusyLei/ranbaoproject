@@ -158,8 +158,7 @@ export default {
           checked: {
             arr1: [],
             arr2: [],
-            arr3: [],
-            arr4: []
+            arr3: []
           },
           children: [
             {

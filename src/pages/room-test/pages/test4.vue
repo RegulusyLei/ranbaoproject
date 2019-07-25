@@ -61,9 +61,9 @@
           </div>
           <div class="right-statistics">
             <div class="all-events">
-              <el-checkbox-group v-model="currentCheck.arr1" :disabled="channelDisabled">
+              <el-checkbox-group v-model="currentCheck.arr1" :disabled="channelAllDisabled">
                 <el-checkbox label="Total" key="Total"></el-checkbox>
-                <el-checkbox label="Percent" key="Percent"></el-checkbox>
+                <el-checkbox label="Percent%" key="Percent%"></el-checkbox>
               </el-checkbox-group>
             </div>
             <div class="channel">
@@ -72,7 +72,7 @@
                 <div class="checks">
                   <el-checkbox-group
                     v-model="currentCheck.arr2"
-                    :disabled="channelDisabled"
+                    :disabled="channel1Disabled"
                     @change="channel1Change">
                     <el-checkbox v-for="item in channel1" :label="item" :key="item">{{item}}</el-checkbox>
                   </el-checkbox-group>
@@ -83,7 +83,7 @@
                 <div class="checks">
                   <el-checkbox-group
                     v-model="currentCheck.arr3"
-                    :disabled="channelDisabled"
+                    :disabled="channel2Disabled"
                     @change="channel2Change">
                     <el-checkbox v-for="item1 in channel2" :label="item1" :key="item1">{{item1}}</el-checkbox>
                   </el-checkbox-group>
@@ -105,38 +105,39 @@ export default {
       tableHead: [
         {
           channelMethod: '补偿'
-        },
-        {
-          channelMethod: 'FCS-A/CV1'
-        },
-        {
-          channelMethod: 'FCS-A/CV2'
-        },
-        {
-          channelMethod: 'FCS-A/CV3'
         }
+        // ,
+        // {
+        //   channelMethod: 'FCS-A/CV1'
+        // },
+        // {
+        //   channelMethod: 'FCS-A/CV2'
+        // },
+        // {
+        //   channelMethod: 'FCS-A/CV3'
+        // }
       ],
       column: [
-        {
-          name: 'P1',
-          value: ['---', 20000000.0, 300]
-        },
-        {
-          name: 'P2',
-          value: ['---', 300, 400]
-        },
-        {
-          name: 'P3',
-          value: ['---', 200, 500]
-        },
-        {
-          name: 'P4',
-          value: ['---', 200, 500]
-        },
-        {
-          name: 'P5',
-          value: ['---', 200, 500]
-        }
+        // {
+        //   name: 'P1',
+        //   value: ['---', 20000000.0, 300]
+        // },
+        // {
+        //   name: 'P2',
+        //   value: ['---', 300, 400]
+        // },
+        // {
+        //   name: 'P3',
+        //   value: ['---', 200, 500]
+        // },
+        // {
+        //   name: 'P4',
+        //   value: ['---', 200, 500]
+        // },
+        // {
+        //   name: 'P5',
+        //   value: ['---', 200, 500]
+        // }
       ],
       tableHeight: 230,
       pointY: '',
@@ -150,11 +151,12 @@ export default {
       channel2: ['CV', 'SD', 'Median', 'Min', 'Max', 'Mean', 'GMean'],
       checkedChennels2: [],
       channelCheackStore: {},
-      currentCheck: {},
       gatesList: [
         {
           id: 1,
           label: 'AllEvents',
+          channel1: '',
+          channel2: '',
           checked: {
             arr1: [],
             arr2: [],
@@ -164,31 +166,34 @@ export default {
             {
               id: 2,
               label: 'P1',
+              channel1: 'FSC-P1A',
+              channel2: '',
               checked: {
                 arr1: [],
                 arr2: [],
-                arr3: [],
-                arr4: []
+                arr3: []
               },
               children: [
                 {
                   id: 3,
                   label: 'P11',
+                  channel1: 'FSC-P1A',
+                  channel2: 'FSC-P1H',
                   checked: {
                     arr1: [],
                     arr2: [],
-                    arr3: [],
-                    arr4: []
+                    arr3: []
                   }
                 },
                 {
                   id: 4,
                   label: 'P12',
+                  channel1: 'FSC-P1A',
+                  channel2: 'FSC-P1H',
                   checked: {
                     arr1: [],
                     arr2: [],
-                    arr3: [],
-                    arr4: []
+                    arr3: []
                   }
                 }
               ]
@@ -196,31 +201,34 @@ export default {
             {
               id: 5,
               label: 'P2',
+              channel1: '',
+              channel2: 'FSC-P2H',
               checked: {
                 arr1: [],
                 arr2: [],
-                arr3: [],
-                arr4: []
+                arr3: []
               },
               children: [
                 {
                   id: 6,
                   label: 'P21',
+                  channel1: 'FSC-P21A',
+                  channel2: 'FSC-P21H',
                   checked: {
                     arr1: [],
                     arr2: [],
-                    arr3: [],
-                    arr4: []
+                    arr3: []
                   }
                 },
                 {
                   id: 7,
                   label: 'P22',
+                  channel1: 'FSC-P22A',
+                  channel2: 'FSC-P22H',
                   checked: {
                     arr1: [],
                     arr2: [],
-                    arr3: [],
-                    arr4: []
+                    arr3: []
                   }
                 }
               ]
@@ -232,8 +240,12 @@ export default {
         children: 'children',
         label: 'label'
       },
-      channelDisabled: true,
-      CurrentKey: ''
+      currentCheck: {},
+      channelAllDisabled: true,
+      channel1Disabled: true,
+      channel2Disabled: true,
+      CurrentKey: '',
+      CurrentLabel: ''
     }
   },
   mounted () {
@@ -284,81 +296,116 @@ export default {
     upPoint (e) {
       this.moveFlag = false
     },
-    nodeClick (data, node) {
-      this.CurrentKey = data.id
-      if (node.checked) {
-        console.log(456)
-        this.currentCheck = data.checked
-        this.channelDisabled = false
+    channelNamePD () {
+      if (!this.channel1Name && this.channel2Name) {
+        // console.log('1空2不空')
+        this.channel1Disabled = true
+        this.channel2Disabled = false
+      } else if (this.channel1Name && !this.channel2Name) {
+        // console.log('1不空2空')
+        this.channel1Disabled = false
+        this.channel2Disabled = true
+      } else if (!this.channel1Name && !this.channel2Name) {
+        // console.log('1和2都空')
+        this.channel1Disabled = true
+        this.channel2Disabled = true
       } else {
-        console.log(123)
-        this.currentCheck = {}
-        this.channelDisabled = true
+        // console.log('都不为空')
+        this.channel1Disabled = false
+        this.channel2Disabled = false
       }
-      // if (node.checked) {
-      //   this.channelDisabled = false
-      //   this.currentCheck = data.checked
-      //   // this.CurrentKey = data.id
-      //   //   this.checkedChennels1 = []
-      //   //   if (this.channelCheackStore[data.id]) {
-      //   //     this.checkedChennels1 = this.channelCheackStore[data.id]
-      //   //   } else {
-      //   //   }
-      // } else {
-      //   console.log(123)
-      //   this.channelDisabled = true
-      //   this.currentCheck = {}
-      //   //   this.checkedChennels1 = [] // 清空通道
-      //   //   this.checkedChennels2 = []
-      //   //   this.$set(this.channelCheackStore, data.id, this.checkedChennels1)
-      // }
+    },
+    nodeClick (data, node) {
+      this.channel1Name = data.channel1
+      this.channel2Name = data.channel2
+      // 选中复选框，解禁
+      if (node.checked) {
+        this.currentCheck = data.checked
+        this.channelNamePD()
+        this.channelAllDisabled = false
+        this.CurrentKey = data.id
+        this.CurrentLabel = data.label
+      } else {
+        this.channelAllDisabled = true
+        this.channel1Disabled = true
+        this.channel2Disabled = true
+        this.currentCheck = {}
+      }
     },
     checkChange (data, checked1) {
       if (checked1) {
+        this.channel1Name = data.channel1
+        this.channel2Name = data.channel2
+        this.channelNamePD()
+        this.channelAllDisabled = false
         this.currentCheck = data.checked
-        this.channelDisabled = false
         this.$refs.tree.setCurrentKey(data.id)
         this.CurrentKey = data.id
+        this.CurrentLabel = data.label
       } else {
         if (data.id === this.CurrentKey) {
-          this.currentCheck = {}
-          this.channelDisabled = true
+          this.channelAllDisabled = true
+          this.channel1Disabled = true
+          this.channel2Disabled = true
         }
         for (let key in data.checked) {
           data.checked[key] = []
         }
       }
-      // if (checked1) {
-      //   this.channelDisabled = false;
-      //   this.$refs.tree.setCurrentKey(data.id)
-      //   this.currentCheck = data.checked
-      // }
-      //   this.channelDisabled = false
-      //   this.$refs.tree.setCurrentKey(data.id)
-      //   this.CurrentKey = data.id
+    },
+    channel1Change () {
+      // console.log(`id:${this.CurrentKey}`);
+      // console.log(this.currentCheck.arr2);
+      this.currentCheck.arr2.forEach((item) => {
+        const channel1ColumnIdx = this.tableHead.findIndex((item1) => {
+          return item1.channelMethod === `${this.channel1Name}/${item}`
+        })
 
-      //   this.checkedChennels1 = []
-      //   if (this.channelCheackStore[data.id]) {
-      //     this.checkedChennels1 = this.channelCheackStore[data.id]
-      //   } else {
-      //   }
-      // else {
-      //   if (data.id === this.CurrentKey) { // 解决取消别的复选框当前复选框禁用的问题
-      //     this.channelDisabled = true
-      //     this.currentCheck = {}
-      // //     this.checkedChennels1 = [] // 清空通道 -》渲染自己的通道
-      // //     this.checkedChennels2 = []
-      // //     this.$set(this.channelCheackStore, this.CurrentKey, this.checkedChennels1)
-      //   }else{
-      //   }
-      // }
+        const channel1RowIdx = this.column.findIndex((item2) => {
+          return item2.id === this.CurrentKey
+        })
+        // console.log(channel1ColumnIdx)
+        if (channel1ColumnIdx > -1) {
+          // 表格里已经有这个列了 接着判断行有没有当前P（行），有就给这个P的这个列加值（0），没有就加个P 再加值
+          console.log('列存在')
+          console.log(channel1ColumnIdx)
+          // console.log()
+          if (channel1RowIdx > -1) {
+            // 有当前P（行）
+            console.log('行存在')
+            console.log(this.column)
+            this.$set(this.column[channel1RowIdx].value, channel1ColumnIdx, 0)
+            // this.column[channel1RowIdx].value[channel1ColumnIdx] = 0;s
+          } else if (channel1RowIdx === -1) {
+            console.log('行不存在')
+            // 没有当前P（行），添加行，再添加对应值
+            this.column.push({
+              id: this.CurrentKey,
+              name: this.CurrentLabel,
+              value: ['---']
+            })
+            this.column[this.column.length - 1].value[channel1ColumnIdx] = 0
+          }
+        } else if (channel1ColumnIdx === -1) {
+          // 表格里没有这个列 加了个列  再判断有没有当前P（行），有P就给这个P的列加个值（0），没有就加个P再加值
+          console.log('列不存在')
+          this.tableHead.push({'channelMethod': `${this.channel1Name}/${item}`})
+          if (channel1RowIdx > -1) {
+            // 有这个当前P 给P对应列加值
+            this.column[channel1RowIdx].value[this.tableHead.length - 1] = 0
+          } else {
+            // 没有这个P 加个P 再加值
+            this.column.push({
+              id: this.CurrentKey,
+              name: this.CurrentLabel,
+              value: ['---']
+            })
+            this.column[this.column.length - 1].value[this.tableHead.length - 1] = 0
+          }
+        }
+      })
     },
-    channel1Change (val) {
-      // console.log(this.checkedChennels1)
-      // this.$set(this.channelCheackStore, this.CurrentKey, this.checkedChennels1)
-      // console.log(this.channelCheackStore)
-    },
-    channel2Change (val) {
+    channel2Change () {
     }
   }
 }
@@ -408,6 +455,7 @@ $table-height: 258px;
       @mixin td-lineHeight {
         height: $td-height;
         line-height: $td-height;
+        padding: 0;
       }
 
       /deep/ .el-table {
@@ -431,6 +479,10 @@ $table-height: 258px;
                   @include td-lineHeight;
                 }
               }
+            }
+            tr.current-row>td {
+                background-color: #4082D7;
+                color: #FFF;
             }
           }
         }
@@ -463,6 +515,10 @@ $table-height: 258px;
                       @include td-lineHeight;
                     }
                   }
+                }
+                tr.current-row>td {
+                    background-color: #4082D7;
+                    color: #FFF;
                 }
               }
             }
